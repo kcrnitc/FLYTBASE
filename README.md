@@ -25,8 +25,6 @@ A comprehensive interactive drone mission planning system with real-time 4D simu
 
 ```
 flyt_deconfliction/
-├── interactive_plotter.py      # Advanced waypoint planner GUI
-├── simulation_runner.py        # Standalone simulation runner
 ├── realtime_simulator.py       # 4D visualization engine
 ├── conflict_checker.py         # Conflict detection algorithm
 ├── utils.py                   # Essential utility functions (3.1KB)
@@ -206,80 +204,7 @@ Edit `interactive_plotter.py`:
 - Figure size and layout parameters
 - Control button positions and sizes
 
-## 🐛 Troubleshooting
-
-### Common Issues
-
-1. **Import Errors**:
-   ```bash
-   # Ensure all dependencies are installed
-   pip install matplotlib numpy
-   ```
-
-2. **Tkinter Issues**:
-   ```bash
-   # On Ubuntu/Debian
-   sudo apt-get install python3-tk
-   ```
-
-3. **File Not Found**:
-   - Ensure working directory is project root
-   - Check file paths in commands
-
-4. **Simulation Window Issues**:
-   - Try different matplotlib backends
-   - Check display settings for remote connections
-
-### Performance Tips
-- Reduce interpolation points for faster simulation
-- Limit number of simultaneous drones for better performance
-- Use simpler plots for large datasets
-
-## 📈 Technical Specifications
-
-### System Requirements
-- Python 3.7+
-- Matplotlib 3.0+
-- NumPy 1.18+
-- Tkinter (usually included with Python)
-
-### Performance Metrics
-- Supports 10+ simultaneous drones
-- Real-time simulation at 30+ FPS
-- Conflict detection in <100ms for typical missions
-- Memory usage: <50MB for standard missions
-
-### Scalability
-- Waypoints: Tested up to 50 per drone
-- Drones: Tested up to 20 simultaneous
-- Simulation time: Handles multi-hour missions
-- File size: JSON missions typically <10KB
-
-## 🤝 Contributing
-
-### Development Setup
-1. Clone the repository
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run tests: `python -m pytest tests/`
-4. Follow PEP 8 style guidelines
-
-### Adding Features
-- New conflict detection algorithms in `conflict_checker.py`
-- Additional visualization modes in `visualizer.py`
-- Enhanced GUI components in `interactive_plotter.py`
-- New simulation backends in `realtime_simulator.py`
-
-## 📝 License
-
-This project is developed for FlytBase Robotics Assignment 2025.
-
-## 🆘 Support
-
-For issues and questions:
-1. Check the troubleshooting section
-2. Review example missions in `saved_missions/`
-3. Run demo scenarios with `python main.py`
-4. Examine test cases in `test_cases/`
+### 
 
 ---
 
