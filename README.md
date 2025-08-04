@@ -204,7 +204,7 @@ Edit `interactive_plotter.py`:
 - Figure size and layout parameters
 - Control button positions and sizes
 
-### 
+##
 
 ---
 
