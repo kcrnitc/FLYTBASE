@@ -38,7 +38,6 @@ A comprehensive interactive drone mission planning system with real-time 4D simu
 - **Data Persistence**: Save/load multi-drone missions in JSON format
 
 ### Advanced Features
-- **Dynamic Drone Management**: Add/remove drones during planning
 - **Automatic Timestamp Calculation**: Evenly distributed waypoint timing
 - **Visual Trajectory Lines**: Color-coded flight paths
 - **Interactive Controls**: Matplotlib-based GUI with comprehensive controls
@@ -48,8 +47,8 @@ A comprehensive interactive drone mission planning system with real-time 4D simu
 
 ```
 flyt_deconfliction/
-├── realtime_simulator.py       # 4D visualization engine
-├── conflict_checker.py         # Conflict detection algorithm
+├── realtime_simulator.py      # 4D visualization 
+├── conflict_checker.py        # Conflict detection algorithm
 ├── utils.py                   # Essential utility functions (3.1KB)
 ├── primary_drone_mission.json # Current primary drone mission data
 ├── simulated_drones.json      # Sample simulated drone missions for testing
@@ -100,56 +99,15 @@ for conflict in result['details']:
 ### Interactive Plotter Usage
 
 #### Basic Operations
-1. **Add Drones**: Click "Add Drone" to create new drones
-2. **Select Drone**: Use radio buttons to switch between drones
-3. **Add Waypoints**: Left-click on plot to add waypoints sequentially
-4. **Remove Waypoints**: Right-click near waypoints to remove them
-5. **Set Times**: Use text boxes to set start/end times per drone
+
+1. **Add Waypoints**: Left-click on plot to add waypoints sequentially
+2. **Remove Waypoints**: Right-click near waypoints to remove them
+3. **Set Times**: Use text boxes to set start/end times per drone
 
 #### Time Format
 All times use ISO format: `YYYY-MM-DDTHH:MM:SS`
 Example: `2025-08-04T10:00:00`
 
-#### Controls Overview
-- **Add Drone**: Create new drone with unique color
-- **Remove**: Delete currently selected drone
-- **Clear Current**: Remove all waypoints from current drone
-- **Clear All**: Remove waypoints from all drones
-- **Manual Entry**: Open tabular coordinate editor
-- **Save Data**: Export mission to JSON file
-- **Load Data**: Import mission from JSON file
-- **Run Simulation**: Execute real-time 4D simulation
-
-### Manual Entry Window
-- **Time Settings**: Modify start/end times for each drone
-- **Waypoint Table**: View and edit coordinates with timestamps
-- **Add Waypoint**: Insert waypoints with precise coordinates
-- **Remove Selected**: Delete selected waypoints
-- **Update Plot**: Sync changes back to main plot
-
-### Mission File Format
-
-```json
-{
-  "mission_metadata": {
-    "created_at": "2025-08-04T12:00:00",
-    "drone_count": 2,
-    "description": "Mission description"
-  },
-  "drones": {
-    "Drone_Alpha": {
-      "waypoints": [
-        {"x": 10, "y": 20, "z": 5, "timestamp": "2025-08-04T10:00:00"}
-      ],
-      "time_window": {
-        "start": "2025-08-04T10:00:00",
-        "end": "2025-08-04T10:15:00"
-      },
-      "color": "blue"
-    }
-  }
-}
-```
 
 ## 🎬 Real-time 4D Simulation
 
@@ -188,30 +146,6 @@ The system features an advanced 4D visualization engine that shows:
 4. **Safety Verification**: Checks against minimum separation requirements
 5. **Conflict Reporting**: Provides detailed conflict location and timing
 
-## 📊 Example Use Cases
-
-### 1. Multi-Drone Inspection Mission
-```bash
-# Load pre-configured 3-drone inspection
-python simulation_runner.py saved_missions/example_3_drone_mission.json
-```
-
-### 2. Conflict Detection Demo
-```bash
-# Load mission with intentional conflicts
-python simulation_runner.py saved_missions/conflict_demo_mission.json
-```
-
-### 3. Custom Mission Planning
-```bash
-# Create custom mission interactively
-python interactive_plotter.py
-# 1. Add multiple drones
-# 2. Click to set waypoints
-# 3. Adjust timing
-# 4. Save mission
-# 5. Run simulation
-```
 
 ## 🛠️ Advanced Configuration
 
@@ -229,4 +163,4 @@ Edit `interactive_plotter.py`:
 
 ---
 
-**FlytBase Robotics Assignment 2025** - Advanced Drone Mission Planning & Deconfliction System
+**FlytBase Robotics Assignment 2025** - Advanced Drone Mission Planning & Deconfliction System 
