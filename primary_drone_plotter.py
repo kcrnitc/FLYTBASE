@@ -1,52 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-UAV Strategic Deconfliction System - Primary Drone Plotter Interface
 
-This module implements the main graphical user interface for the UAV Strategic
-Deconfliction System as specified in the FlytBase Robotics Assignment 2025.
-It provides a simplified, professional interface focused on primary drone path
-planning with integrated conflict detection and real-time 4D simulation capabilities.
-
-KEY FEATURES:
-    ✅ Interactive Waypoint Plotting: Click-to-plot primary drone waypoints
-    ✅ Spatial Check Integration: Real-time conflict detection with safety buffer
-    ✅ Temporal Check Integration: Time-based conflict analysis during overlapping segments
-    ✅ Conflict Explanation: Detailed conflict reports with location and time information
-    ✅ Query Interface: Simple Python function interface for deconfliction
-    ✅ 4D Simulation: Real-time 3D+time visualization with collision detection
-    ✅ Multi-Format Support: Compatible with various coordinate data formats
-
-USER INTERFACE COMPONENTS:
-    - Interactive 2D Plot: Click to add waypoints, visual path representation
-    - Time Controls: Start/end time configuration for mission window
-    - Conflict Detection: Static analysis without simulation execution
-    - Real-time Simulation: 4D visualization with collision warnings
-    - Status Feedback: Clear messages about conflict status and system state
-
-WORKFLOW:
-    1. Plot Primary Drone Path: Click on plot to add waypoints
-    2. Configure Mission Time Window: Set start and end times
-    3. Load Simulated Drones: Automatically loads from simulated_drones.json
-    4. Check Conflicts: Analyze spatial-temporal conflicts without simulation
-    5. Run 4D Simulation: Launch real-time collision detection with visualization
-
-REQUIREMENTS COMPLIANCE:
-    ✅ Spatial Check: Validates minimum distance threshold (2m safety buffer)
-    ✅ Temporal Check: Ensures no spatial overlap during overlapping time segments
-    ✅ Conflict Explanation: Detailed location and time reporting for all conflicts
-    ✅ Query Interface: Simple function-based API for conflict detection
-    ✅ 4D Visualization: Extra credit 3D space + time dimension simulation
-
-Author: FlytBase Robotics Assignment 2025
-Created: 2025
-Last Modified: 2025-08-05
-
-Usage:
-    python primary_drone_plotter.py
-    # or
-    python run_primary_plotter.py
-"""
 
 # Standard library imports
 import json
@@ -68,69 +22,10 @@ from conflict_checker import check_deconfliction
 
 
 class PrimaryDronePlotter:
-    """
-    Primary Drone Path Planning Interface - Main GUI Class
-    
-    This class implements the main graphical user interface for the UAV Strategic
-    Deconfliction System. It provides an intuitive, click-to-plot interface for
-    primary drone path planning with integrated conflict detection and real-time
-    4D simulation capabilities.
-    
-    CORE FUNCTIONALITY:
-        - Interactive waypoint plotting via mouse clicks
-        - Real-time conflict detection with spatial-temporal analysis
-        - 4D simulation launch with collision visualization
-        - Multi-format coordinate support for compatibility
-        - Professional status feedback and error handling
-    
-    DESIGN PRINCIPLES:
-        - Simplicity: Focus on primary drone path planning only
-        - Integration: Seamless conflict detection and simulation integration
-        - Usability: Clear visual feedback and intuitive controls
-        - Reliability: Robust error handling and graceful degradation
-    
-    INTERFACE COMPONENTS:
-        - Main Plot Area: Interactive 2D coordinate system for waypoint placement
-        - Control Panel: Time configuration and action buttons
-        - Status Display: Real-time feedback on system state and conflicts
-        - Simulation Integration: Direct launch of 4D real-time visualization
-    
-    Attributes:
-        fig (matplotlib.figure.Figure): Main plotting figure
-        ax (matplotlib.axes.Axes): Primary plotting axes
-        primary_waypoints (list): List of primary drone waypoints
-        primary_start_time (str): Mission start time in ISO format
-        primary_end_time (str): Mission end time in ISO format
-        other_drones (list): List of simulated drone data for conflict checking
-        primary_json_path (str): Fixed path for primary drone mission file
-    """
+
     
     def __init__(self):
-        """
-        Initialize Primary Drone Plotter Interface
         
-        Sets up the complete graphical user interface including the main plotting
-        area, control panels, event handlers, and data structures. Automatically
-        loads simulated drone data for conflict detection capabilities.
-        
-        INITIALIZATION SEQUENCE:
-            1. Create matplotlib figure and axes for interactive plotting
-            2. Initialize data structures for primary drone and simulated drones
-            3. Configure plot appearance and coordinate system
-            4. Setup control buttons and input fields
-            5. Bind event handlers for mouse clicks and user interactions
-            6. Load simulated drone data for conflict detection
-        
-        PLOT CONFIGURATION:
-            - Figure size: 12x8 inches for optimal visibility
-            - Coordinate system: 0-100 range for both X and Y axes
-            - Grid: Enabled for precise waypoint placement
-            - Aspect ratio: Equal for accurate spatial representation
-        
-        Raises:
-            ImportError: If required matplotlib or tkinter components are unavailable
-            FileNotFoundError: If simulated drone data file is missing (handled gracefully)
-        """
         # MATPLOTLIB FIGURE INITIALIZATION
         # Create main plotting figure with optimal size for waypoint visualization
         self.fig, self.ax = plt.subplots(figsize=(12, 8))
