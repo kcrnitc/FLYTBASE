@@ -2,6 +2,29 @@
 
 A comprehensive interactive drone mission planning system with real-time 4D simulation and conflict detection capabilities.
 
+## 🚀 Quick Start Guide
+
+### Step-by-Step Usage:
+
+1. **Run Primary Plotter:**
+   - Execute `python primary_drone_plotter.py`. This opens an interactive interface to create or load the primary drone mission.
+
+2. **Plot the Primary Drone Path:**
+   - Click anywhere on the canvas to place a waypoint.
+
+3. **Load Simulated Drones (Optional):**
+   - You can load a JSON file containing simulated drone missions to compare against.
+
+4. **Save Mission:**
+   - Once satisfied with the path, click the "Save Primary Path" button to export the primary mission as a JSON file.
+
+5. **Check for Conflicts:**
+   - Click the "Check Conflicts" button. The system will evaluate potential conflicts between the primary and simulated drones.
+
+6. **Run Simulation:**
+   - After conflict detection, click the "Run Simulation" button. A 3D visualization will open showing drone paths over time.
+   - Conflicts will be marked with cross symbols for easy identification.
+
 ## 🚁 Features
 
 ### Core Capabilities
@@ -203,8 +226,6 @@ Edit `interactive_plotter.py`:
 - `colors`: Drone color palette
 - Figure size and layout parameters
 - Control button positions and sizes
-
-##
 
 ---
 
