@@ -105,11 +105,6 @@ Edit `realtime_simulator.py`:
 - `INTERPOLATION_POINTS`: Path density (default: 100 points)
 - `SIMULATION_SPEED`: Animation speed multiplier
 
-### Visual Customization
-Edit `interactive_plotter.py`:
-- `colors`: Drone color palette
-- Figure size and layout parameters
-- Control button positions and sizes
 
 ---
 
