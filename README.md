@@ -7,7 +7,7 @@ A comprehensive interactive drone mission planning system with real-time 4D simu
 ### Step-by-Step Usage:
 
 1. **Run Primary Plotter:**
-   - Execute `python primary_drone_plotter.py`. This opens an interactive interface to create or load the primary drone mission.
+   - Execute `primary_drone_plotter.py`. This opens an interactive interface to create or load the primary drone mission.
 
 2. **Plot the Primary Drone Path:**
    - Click anywhere on the canvas to place a waypoint.
