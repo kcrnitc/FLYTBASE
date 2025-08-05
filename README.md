@@ -28,7 +28,7 @@ A comprehensive interactive drone mission planning system with real-time 4D simu
 ## 🚁 Features
 
 ### Core Capabilities
-- **Multi-drone Support**: Manage unlimited drones with individual color coding
+- **Multi-drone**: Manage unlimited drones with individual color coding
 - **Dual Input Methods**: 
   - Click-to-plot on 2D visualization
   - Manual coordinate entry with tabular interface
@@ -37,11 +37,6 @@ A comprehensive interactive drone mission planning system with real-time 4D simu
 - **Conflict Detection**: Advanced path interpolation detects conflicts anywhere along flight paths
 - **Data Persistence**: Save/load multi-drone missions in JSON format
 
-### Advanced Features
-- **Automatic Timestamp Calculation**: Evenly distributed waypoint timing
-- **Visual Trajectory Lines**: Color-coded flight paths
-- **Interactive Controls**: Matplotlib-based GUI with comprehensive controls
-- **Simulation Integration**: Direct integration with real-time 4D simulator
 
 ## 📁 Project Structure
 
@@ -52,7 +47,6 @@ flyt_deconfliction/
 ├── utils.py                   # Essential utility functions (3.1KB)
 ├── primary_drone_mission.json # Current primary drone mission data
 ├── simulated_drones.json      # Sample simulated drone missions for testing
-├── run_primary_plotter.py     # Simple launcher script
 └── README.md                  # This documentation file
 ```
 
@@ -67,7 +61,7 @@ pip install matplotlib numpy tkinter
 
 **Launch the Primary Drone Plotter Interface:**
 ```bash
-python run_primary_plotter.py
+python primary_drone_plotter.py
 ```
 
 **Core Workflow:**
@@ -76,6 +70,7 @@ python run_primary_plotter.py
 3. **Load Other Drones**: Automatically loads from `simulated_drones.json`
 4. **Check Conflicts**: Analyze conflicts without running simulation
 5. **Run 4D Simulation**: Launch real-time collision detection with visualization
+6. **Update Waypoints**: Change the Json file to update waypoints.
 
 ### Advanced Usage
 
@@ -94,57 +89,12 @@ for conflict in result['details']:
     print(f"Conflict with {conflict['conflicting_drone']} at {conflict['time']}")
 ```
 
-## 📋 User Guide
 
-### Interactive Plotter Usage
-
-#### Basic Operations
-
-1. **Add Waypoints**: Left-click on plot to add waypoints sequentially
-2. **Remove Waypoints**: Right-click near waypoints to remove them
-3. **Set Times**: Use text boxes to set start/end times per drone
 
 #### Time Format
 All times use ISO format: `YYYY-MM-DDTHH:MM:SS`
 Example: `2025-08-04T10:00:00`
 
-
-## 🎬 Real-time 4D Simulation
-
-The system features an advanced 4D visualization engine that shows:
-
-### Visual Elements
-- **Colored Spheres**: Each drone represented by a sphere in its assigned color
-- **Dynamic Time Labels**: Moving timestamps showing current simulation time
-- **3D Space**: Full X, Y, Z coordinate visualization
-- **Smooth Animation**: Real-time interpolated movement
-
-### Simulation Features
-- **Conflict Highlighting**: Red X markers at conflict locations
-- **Time Synchronization**: All drones move in synchronized time
-- **Interactive Controls**: Pause, speed control, and navigation
-- **Legend Display**: Color-coded drone identification
-
-### Technical Details
-- Interpolates between waypoints for smooth movement
-- Calculates exact positions at any point in time
-- Detects conflicts anywhere along flight paths (not just waypoints)
-- Supports variable Z-altitudes and different flight speeds
-
-## 🔍 Conflict Detection Algorithm
-
-### Advanced Features
-- **Path Interpolation**: Detects conflicts anywhere along flight paths
-- **3D Spatial Analysis**: Considers X, Y, and Z coordinates
-- **Time Synchronization**: Accurate temporal conflict detection
-- **Configurable Safety Distance**: Adjustable minimum separation
-
-### Algorithm Details
-1. **Waypoint Interpolation**: Creates dense point clouds along flight paths
-2. **Temporal Alignment**: Synchronizes drone positions at each time step
-3. **Distance Calculation**: Computes 3D Euclidean distances
-4. **Safety Verification**: Checks against minimum separation requirements
-5. **Conflict Reporting**: Provides detailed conflict location and timing
 
 
 ## 🛠️ Advanced Configuration
